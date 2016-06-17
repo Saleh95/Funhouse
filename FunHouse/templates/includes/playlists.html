@@ -1,0 +1,21 @@
+{% block content %}
+    <div class="bs-calltoaction bs-calltoaction-info">
+                    <div class="row">
+                        <div class="col-md-9 cta-contents">
+                            <h1 class="cta-title">{{ play.name }}</h1>
+                        {% if play.songs.all %}
+                            <div class="cta-desc">
+                                {% for song in play.songs.all %}
+                                <p>{{ song.song_title }}</p>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            <P>Too bad</P>
+                        {% endif %}
+                        </div>
+                        <div class="col-md-3 cta-button">
+                            <a href="#" class="btn btn-lg btn-block btn-info glyphicon glyphicon-play">Play</a>
+                        </div>
+                     </div>
+                </div>
+{% endblock %}

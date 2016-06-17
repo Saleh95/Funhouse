@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block rapper %}
+    {% include 'includes/styler.html' %}
+{% endblock %}
+{% block content %}
+    <h1 class="AlbumHeader">{{ object.artist }}:{{ object.title }}</h1>
+    {% if object %}
+        {% for song in object.song_set.all %}
+              {% include 'includes/Songs.html' %}
+        {% endfor %}
+    {% else %}
+        <h1>Sorry An error has occured, please check again later!S</h1>
+    {% endif %}
+{% endblock %}
+<!--
+<div class="panel-body">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ song.video_id }}" frameborder="0"
+                allowfullscreen></iframe><br>
+                </div>
+ -->

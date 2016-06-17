@@ -1,0 +1,16 @@
+{% block content %}
+    <div class="row">
+                <div class="col-sm-12">
+                 <div class="thumbnail">
+                     <div class="iframe-wrapper">
+                     <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ song.video_id }}" frameborder="0"
+                allowfullscreen></iframe></div>
+                     <br>
+                     <audio controls>
+                         <source src="/media/{{ song.audio_file }}" type="audio/mpeg">
+                         </audio>
+                     <p><a href="{% url 'music:download' song.id %}" class="btn btn-primary" role="button">Download</a></p>
+                </div>
+            </div>
+            </div>
+{% endblock %}

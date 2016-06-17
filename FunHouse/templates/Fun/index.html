@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% if object_list %}
+    {% for album in object_list %}
+        {% include 'includes/Albums.html' %}
+    {% endfor %}
+        {% else %}
+        <h1>Opps,My bad! Server is busy!</h1>
+    {% endif %}
+{% endblock %}
